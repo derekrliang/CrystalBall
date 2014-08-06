@@ -1,5 +1,7 @@
 package com.example.crystalball;
 
+import java.util.Random;
+
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -24,8 +26,38 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// The button was clicked, so update the answer label with an answer
-				String answer = "Yes";
+				String answer = "";
 				
+				// Randomly select one of the three answers: Yes, No, or Maybe
+				Random randomGenerator = new Random(); // Construct a new Random number generator
+				int randomNumber = randomGenerator.nextInt(3);
+				
+				//answer = Integer.toString(randomNumber);
+				
+				/* Convert the randomNumber to a text answer
+				 * 0 = Yes
+				 * 1 = No
+				 * 2 = Maybe
+				 */
+				
+				if (randomNumber == 0)
+				{
+					answer = "Yes";
+				}
+				else if (randomNumber == 1)
+				{
+					answer = "No";
+				}
+				else if (randomNumber == 2)
+				{
+					answer = "Maybe";
+				}
+				else
+				{
+					answer = "Sorry, there was an error!";
+				}
+				
+				// Update the label with our dynamic answer
 				answerLabel.setText(answer);
 			}
 		});
