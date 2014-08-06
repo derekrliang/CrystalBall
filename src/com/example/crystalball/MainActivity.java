@@ -1,8 +1,8 @@
 package com.example.crystalball;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 	private CrystalBall mCrystalBall = new CrystalBall();
 	
@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
 		Button getAnswerButton = (Button) findViewById(R.id.button1);
 		
 		// EXTRA CREDIT: Change background color on click
-		final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativeLayout1);
+		//final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativeLayout1);
 		
 		getAnswerButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -35,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
 				answerLabel.setText(answer);
 				
 				// EC1:
-				layout.setBackgroundColor(Color.GREEN);
+				//layout.setBackgroundColor(Color.GREEN);
 			}
 		});
 	}
